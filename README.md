@@ -40,7 +40,11 @@ Följande bibliotek behöver ni installera för denna examination:
 
 **Får Väl Godkänt ska du:**
 
-- Har gjort acceptanskriterier samt tester för felhantering (exempelvis går inte att lägga en beställning om inte alla fält är ifyllda).
+- Har gjort acceptanskriterier samt tester för felhantering.
+  *  Att en bokning inte går att göras om alla fält inte är ifyllda.
+  *  Att en bokning inte går att göra ifall antal skor inte matchas mot antal spelare
+  *  Att en bokning inte går att föra ifall antalet spelare inte stämmer gentemot antalet banor (max 4 spelare per bana)
+    
 
 ## Inlämning
 
