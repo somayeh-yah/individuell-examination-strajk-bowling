@@ -59,6 +59,7 @@ function Confirmation({ confirmationDetails, setConfirmation }) {
       )}
     </section>
   );
+  //
 }
 
 export default Confirmation;
