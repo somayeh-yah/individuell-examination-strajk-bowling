@@ -4,8 +4,8 @@ import Booking from './views/Booking';
 
 function App() {
   return (
-    <div className='App'>
-      <Booking />
+    <div data-testid = "booking" className='App'>
+      <Booking  />
     </div>
   );
 }

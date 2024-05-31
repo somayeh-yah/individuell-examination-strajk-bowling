@@ -11,6 +11,7 @@ function BookingInfo({ updateBookingDetails }) {
       <form className='booking-info__details'>
         <section className='booking-info__when'>
           <Input
+           data-testid="date"
             label='Date'
             type='date'
             customClass='booking-info__date'
@@ -18,6 +19,7 @@ function BookingInfo({ updateBookingDetails }) {
             handleChange={updateBookingDetails}
           />
           <Input
+           data-testid="time"
             label='Time'
             type='time'
             name='time'
@@ -25,6 +27,7 @@ function BookingInfo({ updateBookingDetails }) {
           />
         </section>
         <Input
+          data-testid="bowlers"
           label='Number of awesome bowlers'
           type='number'
           customClass='booking-info__who'
@@ -32,6 +35,7 @@ function BookingInfo({ updateBookingDetails }) {
           handleChange={updateBookingDetails}
         />
         <Input
+         data-testid="lanes"
           label='Number of lanes'
           type='number'
           customClass='booking-info__lanes'

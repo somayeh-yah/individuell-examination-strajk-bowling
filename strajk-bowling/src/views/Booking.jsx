@@ -119,9 +119,9 @@ function Booking() {
   return (
     <main>
       {!confirmation?.active ? (
-        <section className='booking'>
+        <section data-testid = "booking" className='booking'>
           <Navigation setConfirmation={setConfirmation} />
-          <Top title='Booking' />
+          <Top data-testid="title" title='Booking' />
           <BookingInfo updateBookingDetails={updateBookingDetails} />
           <Shoes
             updateSize={updateSize}
@@ -129,7 +129,7 @@ function Booking() {
             removeShoe={removeShoe}
             shoes={shoes}
           />
-          <button className='button booking__button' onClick={book}>
+          <button data-testid ="striike-btn" className='button booking__button' onClick={book}>
             strIIIIIike!
           </button>
           {error ? <ErrorMessage /> : ''}

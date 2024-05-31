@@ -33,6 +33,7 @@ function Confirmation({ confirmationDetails, setConfirmation }) {
             disabled='disabled'
           />
           <Input
+          data-testid= "booking-num"
             label='Booking number'
             type='text'
             customClass='confirmation__input'

@@ -11,8 +11,10 @@ function Input({
 }) {
   return (
     <section className='input'>
-      <label className='input__label'>{label}</label>
+      <label htmlFor={name} className='input__label'>{label}</label>
       <input
+        data-testid ="players"
+        id={name}
         type={type}
         className={`input__field ${customClass ? customClass : ''}`}
         name={name}
