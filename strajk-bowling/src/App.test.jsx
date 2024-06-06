@@ -1,6 +1,6 @@
 import { render, screen, waitFor, fireEvent } from "@testing-library/react";
-
 import App from "./App";
+import { expect } from "vitest";
 
 describe("App", () => {
   beforeEach(() => {
@@ -9,50 +9,71 @@ describe("App", () => {
 
   it("should render my booking reference-number", async () => {
     const currentDate = new Date().toISOString().split("T")[0];
-    const when = screen.getByTestId("date");
-    fireEvent.change(when, {
+    const date = screen.getByLabelText(/Date/i);
+    fireEvent.change(date, {
       target: { value: currentDate },
     });
 
-    const time = screen.getByTestId("time");
-    const selectedtime = "12:00";
+    const time = screen.getByLabelText(/Time/i);
     fireEvent.change(time, {
-      target: { value: selectedtime },
+      target: { value: "12:00" },
     });
 
-    const bowler = screen.getByTestId("bowlers");
+    const bowler = screen.getByLabelText(/Number of awesome bowlers/i);
     fireEvent.change(bowler, {
       target: { value: "1" },
     });
 
-    const lane = screen.getByTestId("lanes");
+    const lane = screen.getByLabelText(/Number of lanes/i);
     fireEvent.change(lane, {
       target: { value: "1" },
     });
 
-    const addShobutton = screen.getByTestId("add-button");
+    const addShobutton = screen.getByText("+");
     fireEvent.click(addShobutton);
 
     await waitFor(() => {
-      const input = screen.getByTestId("players");
-      fireEvent.change(input, {
-        target: { value: "10" },
-      });
+      const shoeSizeInput = screen.getAllByTestId("bowlers")[0];
+      fireEvent.change(shoeSizeInput, { target: { value: "10" } });
     });
+
     const striiikeBtn = screen.getByTestId("striike-btn");
     fireEvent.click(striiikeBtn);
+
     await waitFor(() => {
-      expect(screen.getByTestId("booking-num").value).toBe("STR1428UBDZ");
+      const bookingNumber = screen.getByDisplayValue("STR102YZMR");
+      expect(bookingNumber.textContent).toBe("STR102YZMR");
     });
   });
 
+  it("should navigate to main page on clicking [ Sweet, let's go! ] button", async () => {
+    const striiikeBtn = screen.getByTestId("striike-btn");
+    fireEvent.click(striiikeBtn);
 
-  it("should navigate to main page after order confirmation", async() => {
-      const currentDate = new Date().toISOString().split("T")[0];
-      const time = screen.getByTestId("time");
-      fireEvent.change(time, {
-        target: { value: currentDate },
-      });
-
+    await waitFor(() => {
+      const bookingNumber = screen.getAllByRole("button");
+      expect(bookingNumber).toBeInTheDocument();
+      expect(bookingNumber.textContent).toBe("STR1428UBDZ");
     });
+
+    const navigationBtn = screen.getByDisplayValue("Sweet, let's go!");
+    expect(navigationBtn).toBeInTheDocument();
+    fireEvent.click(navigationBtn);
+
+    await waitFor(() => {
+      const date = screen.getByLabelText(/Date/i);
+      const time = screen.getByLabelText(/Time/i);
+      const bowler = screen.getByLabelText(/Number of awesome bowlers/i);
+      const lane = screen.getByLabelText(/Number of lanes/i);
+
+      expect(date).toBeInTheDocument();
+      expect(date.value).toBe("");
+      expect(time).toBeInTheDocument();
+      expect(time.value).toBe("");
+      expect(bowler).toBeInTheDocument();
+      expect(bowler.value).toBe("");
+      expect(lane).toBeInTheDocument();
+      expect(lane.value).toBe("");
+    });
+  });
 });

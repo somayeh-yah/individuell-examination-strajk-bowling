@@ -6,7 +6,7 @@ import Input from '../Input/Input';
 
 function Confirmation({ confirmationDetails, setConfirmation }) {
   return (
-    <section className='confirmation'>
+    <section className='confirmation' data-testid="booking-num">
       <Navigation setConfirmation={setConfirmation} />
       <Top title='See you soon!' />
       {confirmationDetails?.active ? (
@@ -33,7 +33,7 @@ function Confirmation({ confirmationDetails, setConfirmation }) {
             disabled='disabled'
           />
           <Input
-          data-testid= "booking-num"
+           
             label='Booking number'
             type='text'
             customClass='confirmation__input'
@@ -45,6 +45,7 @@ function Confirmation({ confirmationDetails, setConfirmation }) {
             <p>{confirmationDetails.price} sek</p>
           </article>
           <button
+          
             className='button confirmation__button'
             onClick={(event) => {
               event.preventDefault();

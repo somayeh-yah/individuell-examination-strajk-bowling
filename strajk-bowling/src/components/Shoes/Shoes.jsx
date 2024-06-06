@@ -6,11 +6,11 @@ import Input from '../Input/Input';
 function Shoes({ updateSize, addShoe, removeShoe, shoes }) {
 
     const shoeComps = shoes.map((input, index) => {
-        const label = `Shoe size / person ${index + 1}`;
+        const label = `Shoe size / person ${index + 1}`; 
         const shoeInput = (
         <article className='shoes__form' key={ input.id }>
             <Input  label={ label } type='text'
-                
+                data-testid ="shoe-size"
                 customClass='shoes__input'
                 name={ input.id }
                 handleChange={ updateSize } />
