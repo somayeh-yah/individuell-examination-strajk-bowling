@@ -8,7 +8,7 @@
 # As a user I want to be able to send off my reservation and get back reservation number and total sum so that I know how much to pay. 
 # As a user I want to be able to navigate back to the main page after booking confirmation.
 
-#################################################################### Acceptans criteria #################################################################################
+## Acceptans criteria 
 
 - It should get error if I use letters instead of numbers in the date field.
 
