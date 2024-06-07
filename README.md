@@ -1,51 +1,62 @@
 # Individuell examination: Strajk bowling
 
-## Bakgrund
+#### User stories ####
 
-Strajk bowling är en nyöppnad bowlinghall i centrala Bromölla. Ägaren K. Ägla gillar tekniska lösningar och har tillsammans med brorsonen Keso Ägla byggt denna webbapp.
-Herr Ägla är väldigt nöjd med appen men vill försäkra sig om att den är fortsatt stabil när ny funktionalitet läggs till framöver. Ditt uppdrag är att skriva unit tester med React testing library som sen kan köras för att testa av all funktionalitet när man gör en push till Github.
+# As a user I want to be able to book dates and times and enter players so that I can reserve 1 or more lanes in the bowling alley. 
+# As a user I want to be able to choose the shoe size for each player so that each player gets shoes tha fit. 
+# As a user I want to be able to remove a shoe size field if I accidentlly clicked on one too many so I don't book shoes unnecessarily. 
+# As a user I want to be able to send off my reservation and get back reservation number and total sum so that I know how much to pay. 
+# As a user I want to be able to navigate back to the main page after booking confirmation.
 
-Du hittar de user stories som har implementerats nedan och som de ska skrivas tester för. Du behöver dock skriva acceptanskriterier för varje user story.
+#################################################################### Acceptans criteria #################################################################################
 
-## User stories
+- It should get error if I use letters instead of numbers in the date field.
 
-Som användare vill jag kunna boka datum och tid samt ange antal spelare så att jag kan reservera 1 eller flera baner i bowlinghallen.
+- It should give an error if I forgot to fill in an input fild.
 
-Som användare vill jag kunna välja skostorlek för varje spelare så varje spelare får skor som passar.
+- The range of numbers for shoe size should be only 2 charachters. 
 
-Som användare vill jag kunna ta bort ett fält för skostorlek om jag råkade klicka i ett för mycket så jag inte boka skor i onödan.
+- It should give me an message if I shoose yesterdays date.
 
-Som användare vill jag kunna skicka iväg min reservation och få tillbaka ett ett bokningsnummer och totalsumma så jag vet hur mycket jag ska betala. (120 kr / person + 100 kr / bana).
+- It should get a error if I people is under 0 
 
-Som användare vill jag kunna navigera tillbaka till bokningsvyn efter bekräftelse.
+- It shuld get give a error message if lanes is under 0
 
-## Bibliotek ni behöver
+- It should gave an error if time is under 
 
-Följande bibliotek behöver ni installera för denna examination:
+- Date should not accept letters
 
-- `npm install vitest --save-dev`
-- `npm install jsdom --save-dev`
-- `npm install @testing-library/react @testing-library/jest-dom --save-dev`
-- `npm install msw --save-dev`
+- Date should not accept special charachters
 
-## Betygskriterier
+- Date should give an varning if I forgot giva date for visit
 
-**Får godkänt ska du:**
+- An error should occur if the time field is left empty.
 
-- Gjort acceptanskriterier till varje user story som sedan blir testfall. (Hur många acceptanskriterier till varje story är svårt att säga utan det gäller att hitta en bra balans, diskutera gärna med mig här). Du kan skriva acceptanskriterierna i README:n för ditt Githubrepo.
-- Gjort tester i React testing library för alla user stories som går grönt när man kör dessa.
-- Mockat POST-anrop med Mock service worker.
-- Alla tester finns representerade i acceptanskriterierna.
-- Testerna triggas via en Github actions på main-branchen. Det bör alltså finnas en grön bock i ditt Github repo när du lämnar in examinationen.
+- The bowlers fild should not accept letters
 
-**Får Väl Godkänt ska du:**
+- The bowlers field should only accept numbers between 1 to 250
 
-- Har gjort acceptanskriterier samt tester för felhantering.
-  *  Att en bokning inte går att göras om alla fält inte är ifyllda.
-  *  Att en bokning inte går att göra ifall antal skor inte matchas mot antal spelare
-  *  Att en bokning inte går att föra ifall antalet spelare inte stämmer gentemot antalet banor (max 4 spelare per bana)
-    
+- The bowlers field should not accept negative numbers
 
-## Inlämning
+- The number of bowlers and the number of lanes should match.
 
-Lämna in länk till Githubrepo med koden (inklusive tester) och acceptanskriterier (i README) på Learnpoint senast **fredagen 5/31 kl 23:59**.
+- The lanes field should only accept a 2 digit number
+
+- The lanes field should not accept letters or special  characters.
+
+- The application should warn if I try to book with an empty field. 
+
+- The shoe fild should not accept letters
+
+- The shoe fild should give a varning if I enter a negative number
+
+- The shoe field should only accept a 2 digit number 
+
+- The shoe field should only accept numbers between 25 and 50.
+
+- number of bowlers and lanes should match.
+
+- An error should occur if the number of people is less than 0.
+
+
+
