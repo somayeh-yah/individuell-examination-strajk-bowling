@@ -13,7 +13,7 @@ function Input({
     <section className='input'>
       <label htmlFor={name} className='input__label'>{label}</label>
       <input
-        data-testid ="bowlers"
+        data-testid ={label}
         id={name}
         type={type}
         className={`input__field ${customClass ? customClass : ''}`}
