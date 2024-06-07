@@ -34,7 +34,7 @@
 
 - The bowlers fild should not accept letters
 
-- The bowlers field should only accept numbers between 1 to 250
+- The bowlers field should only accept numbers between 1 to 100
 
 - The bowlers field should not accept negative numbers
 
