@@ -14,15 +14,15 @@
 
 - It should give an error if I forgot to fill in an input fild.
 
-- The range of numbers for shoe size should be only 2 charachters. 
+- The range of numbers for shoe size should only be 2 charachters. 
 
 - It should give me an message if I shoose yesterdays date.
 
-- It should get a error if I people is under 0 
+- It should get a error if people is under 0 
 
 - It shuld get give a error message if lanes is under 0
 
-- It should gave an error if time is under 
+- It should gave an error if I try give an time that has passed 
 
 - Date should not accept letters
 
@@ -44,7 +44,9 @@
 
 - The lanes field should not accept letters or special  characters.
 
-- The application should warn if I try to book with an empty field. 
+- The application should warn if I try to book with an empty field.
+
+- I shuld be able to remove a shoe filed  
 
 - The shoe fild should not accept letters
 
@@ -57,6 +59,20 @@
 - number of bowlers and lanes should match.
 
 - An error should occur if the number of people is less than 0.
+
+- The Confirmation page should have a button that I can use to navigate back to the main page.
+
+- I should be able to book a reservation for my visit.
+
+- I should get a confirmation message with my booking information.
+
+- The confirmation message should contain the visit date.
+
+- The confirmation message should contain the visit time.
+
+- The confirmation message should contain the total sum for my reservation.
+
+
 
 
 
