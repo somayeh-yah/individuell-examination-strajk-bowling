@@ -40,6 +40,8 @@
 
 - The number of bowlers and the number of lanes should match.
 
+- Only 4 players/ lane should be allowed 
+
 - The lanes field should only accept a 2 digit number
 
 - The lanes field should not accept letters or special  characters.
