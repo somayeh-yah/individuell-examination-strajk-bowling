@@ -4,7 +4,7 @@ import Booking from './views/Booking';
 
 function App() {
   return (
-    <div data-testid = "booking" className='App'>
+    <div className='App'>
       <Booking  />
     </div>
   );

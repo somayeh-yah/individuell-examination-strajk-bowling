@@ -6,9 +6,9 @@ import Input from '../Input/Input';
 
 function Confirmation({ confirmationDetails, setConfirmation }) {
   return (
-    <section className='confirmation' >
+    <section data-testid="confirmation-info" className='confirmation' >
       <Navigation setConfirmation={setConfirmation} />
-      <Top title='See you soon!' />
+      <Top  title='See you soon!' />
       {confirmationDetails?.active ? (
         <form className='confirmation__details'>
           <Input
@@ -45,7 +45,7 @@ function Confirmation({ confirmationDetails, setConfirmation }) {
             <p>{confirmationDetails.price} sek</p>
           </article>
           <button
-            data-testid ="sweet-button"
+            data-testid ="navigate-button"
             className='button confirmation__button'
             onClick={(event) => {
               event.preventDefault();

@@ -121,9 +121,9 @@ function Booking() {
   return (
     <main>
       {!confirmation?.active ? (
-        <section data-testid = "booking" className='booking'>
+        <section  className='booking'>
           <Navigation setConfirmation={setConfirmation} />
-          <Top data-testid="title" title='Booking' />
+          <Top title='Booking' />
           <BookingInfo updateBookingDetails={updateBookingDetails} />
           <Shoes
             updateSize={updateSize}
