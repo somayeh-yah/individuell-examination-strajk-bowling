@@ -1,7 +1,7 @@
 import { render, screen, waitFor, fireEvent } from "@testing-library/react";
 import App from "./App";
 import { expect } from "vitest";
-import Booking from "./views/Booking";
+
 
 describe("App", () => {
   beforeEach(() => {
@@ -48,15 +48,5 @@ describe("App", () => {
     });
   });
 
-  // it("should navigate to main page on clicking [ Sweet, let's go! ] button", async () => {
-  //   const sweetButton = screen.getByTestId("navigate-button");
-  //   expect(sweetButton).toBeInTheDocument();
-  //   fireEvent.click(sweetButton);
-   
-   
-  //   await waitFor(() => {
-  //     const striikebutton = screen.getByLabelText("+");
-  //     expect(striikebutton).toBeTruthy;
-  //   });
-  // });
+
 });
