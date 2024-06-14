@@ -3,7 +3,7 @@
 # Libraries you need
 
 # The following libraries need to be installed for this examination:
-
+   - npm create vite@latest
    - npm install vitest --save-dev
    - npm install jsdom --save-dev
    - npm install @testing-library/react @testing-library/jest-dom --save-dev
