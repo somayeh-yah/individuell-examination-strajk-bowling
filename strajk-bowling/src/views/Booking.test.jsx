@@ -1,7 +1,5 @@
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import Booking from "./Booking";
-import ErrorMessage from "../components/ErrorMessage/ErrorMessage";
-
 import { it, describe, expect, beforeEach } from "vitest";
 
 describe("Booking", () => {
@@ -74,11 +72,13 @@ describe("Booking", () => {
   });
 
   it("should give an error message if I missed fill in one or two filds", async () => {
+    
     const currentDate = new Date().toISOString().split("T")[0];
     const date = screen.getByLabelText(/Date/i);
     const time = screen.getByLabelText(/Time/i);
     const bowlers = screen.getByLabelText(/Number of awesome bowlers/i);
     const lanes = screen.getByLabelText(/Number of lanes/i);
+    
     expect(date).toBeInTheDocument();
     expect(time).toBeInTheDocument();
     expect(bowlers).toBeInTheDocument();
