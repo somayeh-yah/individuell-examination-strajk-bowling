@@ -1,5 +1,15 @@
 # Individuell examination: Strajk bowling
 
+# Libraries you need
+
+# The following libraries need to be installed for this examination:
+   - npm create vite@latest
+   - npm install vitest --save-dev
+   - npm install jsdom --save-dev
+   - npm install @testing-library/react @testing-library/jest-dom --save-dev
+   - npm install msw --save-dev
+
+
 #### User stories ####
 
 # As a user I want to be able to book dates and times and enter players so that I can reserve 1 or more lanes in the bowling alley. 
